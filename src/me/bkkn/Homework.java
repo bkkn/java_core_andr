@@ -9,12 +9,18 @@ import static me.bkkn.lesson2.Task.checkBalance;
 import static me.bkkn.lesson2.Task.shift;
 import static me.bkkn.lesson3.Task.guessTheNumber;
 import static me.bkkn.lesson3.Task.guessTheWord;
+import static me.bkkn.lesson4.TicTacToeGame.play;
 
 public class Homework {
     public static void main(String[] args) {
         lesson1Hw();
         lesson2Hw();
         lesson3Hw();
+        lesson4Hw();
+    }
+
+    private static void lesson4Hw() {
+        play();
     }
 
     private static void lesson3Hw() {
