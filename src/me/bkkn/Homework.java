@@ -2,6 +2,9 @@ package me.bkkn;
 
 import me.bkkn.lesson1.Task;
 import me.bkkn.lesson5.Worker;
+import me.bkkn.lesson6.Animal;
+import me.bkkn.lesson6.Cat;
+import me.bkkn.lesson6.Dog;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -19,6 +22,19 @@ public class Homework {
         lesson3Hw();
         lesson4Hw();
         lesson5Hw();
+        lesson6Hw();
+    }
+
+    private static void lesson6Hw() {
+        new Dog("Бобик", true).run(600).swim(20);
+        new Dog("Каштанка", false).run(10).swim(20);
+
+        new Cat("Барсик", true).run(10).swim(20);
+        new Cat("Пуся", false).run(10).swim(20);
+
+        System.out.println("Total animals count: " + Animal.getCounter());
+        System.out.println("Total cats count: " + Cat.getCounter());
+        System.out.println("Total dogs count: " + Dog.getCounter());
     }
 
     private static void lesson5Hw() {
