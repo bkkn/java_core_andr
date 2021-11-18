@@ -1,6 +1,7 @@
 package me.bkkn;
 
 import me.bkkn.lesson1.Task;
+import me.bkkn.lesson5.Worker;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -17,6 +18,20 @@ public class Homework {
         lesson2Hw();
         lesson3Hw();
         lesson4Hw();
+        lesson5Hw();
+    }
+
+    private static void lesson5Hw() {
+        Worker[] workers = new Worker[5];
+        workers[0] = new Worker("Ivanov Ivan1", "Engineer1", "ivivan1@mailbox.com", "892312312", 30000, 30);
+        workers[1] = new Worker("Ivanov Ivan2", "Engineer2", "ivivan2@mailbox.com", "892312313", 40000, 40);
+        workers[2] = new Worker("Ivanov Ivan3", "Engineer3", "ivivan3@mailbox.com", "892312314", 50000, 50);
+        workers[3] = new Worker("Ivanov Ivan4", "Engineer4", "ivivan4@mailbox.com", "892312315", 30000, 60);
+        workers[4] = new Worker("Ivanov Ivan5", "Engineer5", "ivivan5@mailbox.com", "892312316", 30000, 20);
+        for (Worker w : workers) {
+            if (w.getAge() > 40)
+                System.out.println(w);
+        }
     }
 
     private static void lesson4Hw() {
