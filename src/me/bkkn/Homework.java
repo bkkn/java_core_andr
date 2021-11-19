@@ -25,6 +25,10 @@ public class Homework {
         lesson5Hw();
         lesson6Hw();
         lesson7Hw();
+        lesson8Hw();
+    }
+
+    private static void lesson8Hw() {
     }
 
     private static void lesson7Hw() {
