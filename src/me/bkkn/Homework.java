@@ -29,6 +29,7 @@ public class Homework {
     }
 
     private static void lesson8Hw() {
+        //do smth
     }
 
     private static void lesson7Hw() {
