@@ -19,6 +19,7 @@ import static me.bkkn.lesson4.TicTacToeGame.play;
 
 public class Homework {
     public static void main(String[] args) {
+
 //        lesson1Hw();
 //        lesson2Hw();
 //        lesson3Hw();
@@ -30,6 +31,7 @@ public class Homework {
     }
 
     private static void lesson8Hw() {
+
         /*
         *  Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
         *  Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
@@ -56,7 +58,6 @@ public class Homework {
 
             }
         }
-
     }
 
     private static void lesson7Hw() {
