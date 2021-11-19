@@ -6,6 +6,7 @@ import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
 import me.bkkn.lesson6.Dog;
 import me.bkkn.lesson7.Bowl;
+import me.bkkn.lesson8.*;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -18,17 +19,45 @@ import static me.bkkn.lesson4.TicTacToeGame.play;
 
 public class Homework {
     public static void main(String[] args) {
-        lesson1Hw();
-        lesson2Hw();
-        lesson3Hw();
-        lesson4Hw();
-        lesson5Hw();
-        lesson6Hw();
-        lesson7Hw();
+
+//        lesson1Hw();
+//        lesson2Hw();
+//        lesson3Hw();
+//        lesson4Hw();
+//        lesson5Hw();
+//        lesson6Hw();
+//        lesson7Hw();
         lesson8Hw();
     }
 
     private static void lesson8Hw() {
+
+        /*
+        *  Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
+        *  Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
+        *  Создайте два класса: беговая дорожка и стена, при прохождении через которые,
+        *  участники должны выполнять соответствующие действия (бежать или прыгать),
+        *  результат выполнения печатаем в консоль (успешно пробежал, не смог пробежать и т.д.).
+        *  Создайте два массива: с участниками и препятствиями, и заставьте всех участников пройти этот набор препятствий.
+        *  У препятствий есть длина (для дорожки) или высота (для стены), а участников ограничения на бег и прыжки.
+        *  Если участник не смог пройти одно из препятствий, то дальше по списку он препятствий не идет.
+        * */
+
+        Doing[] actors = {
+                new Human(), new Robot(), new me.bkkn.lesson8.Cat()
+        };
+
+        Obstacle[] obstacles = {
+                new Treadmill(100), new Wall(1), new Treadmill(1000), new Wall(100)
+        };
+
+        for(Doing actor: actors){
+            for(Obstacle obstacle : obstacles){
+
+                actor.overcome(obstacle);
+
+            }
+        }
     }
 
     private static void lesson7Hw() {
@@ -40,11 +69,11 @@ public class Homework {
 
         Bowl bowl = new Bowl();
         bowl.putFood(400);
-        for(me.bkkn.lesson7.Cat cat : cats){
+        for (me.bkkn.lesson7.Cat cat : cats) {
             cat.eat(bowl);
         }
 
-        for(me.bkkn.lesson7.Cat cat : cats){
+        for (me.bkkn.lesson7.Cat cat : cats) {
             System.out.println(cat);
         }
     }
