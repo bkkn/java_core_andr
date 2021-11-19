@@ -5,6 +5,7 @@ import me.bkkn.lesson5.Worker;
 import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
 import me.bkkn.lesson6.Dog;
+import me.bkkn.lesson7.Bowl;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -23,6 +24,25 @@ public class Homework {
         lesson4Hw();
         lesson5Hw();
         lesson6Hw();
+        lesson7Hw();
+    }
+
+    private static void lesson7Hw() {
+        me.bkkn.lesson7.Cat[] cats = {
+                new me.bkkn.lesson7.Cat("Cat1", 50),
+                new me.bkkn.lesson7.Cat("Cat2", 100),
+                new me.bkkn.lesson7.Cat("Cat3", 300),
+        };
+
+        Bowl bowl = new Bowl();
+        bowl.putFood(400);
+        for(me.bkkn.lesson7.Cat cat : cats){
+            cat.eat(bowl);
+        }
+
+        for(me.bkkn.lesson7.Cat cat : cats){
+            System.out.println(cat);
+        }
     }
 
     private static void lesson6Hw() {
