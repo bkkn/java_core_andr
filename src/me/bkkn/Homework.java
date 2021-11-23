@@ -7,6 +7,8 @@ import me.bkkn.lesson6.Cat;
 import me.bkkn.lesson6.Dog;
 import me.bkkn.lesson7.Bowl;
 import me.bkkn.lesson8.*;
+import me.bkkn.lesson9.MyArrayDataException;
+import me.bkkn.lesson9.MyArraySizeException;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -16,6 +18,7 @@ import static me.bkkn.lesson2.Task.shift;
 import static me.bkkn.lesson3.Task.guessTheNumber;
 import static me.bkkn.lesson3.Task.guessTheWord;
 import static me.bkkn.lesson4.TicTacToeGame.play;
+import static me.bkkn.lesson9.Task.summarize;
 
 public class Homework {
     public static void main(String[] args) {
@@ -27,7 +30,51 @@ public class Homework {
 //        lesson5Hw();
 //        lesson6Hw();
 //        lesson7Hw();
-        lesson8Hw();
+//        lesson8Hw();
+        lesson9Hw();
+    }
+
+    private static void lesson9Hw() {
+        String[][] arr44 = new String[4][4];
+        String[][] arr45 = new String[4][5];
+        String[][] arr54 = new String[5][4];
+
+        int cnt = 0;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                arr44[i][j] = Integer.toString(++cnt);
+            }
+        }
+        try {
+            arr44[0][0] = "a";
+            int res44 = summarize(arr44);
+
+
+        } catch (MyArrayDataException arrayDataException) {
+//            arrayDataException.printStackTrace();
+
+            System.out.println("Let's fix the wrong value and run again:");
+            arr44[0][0] = "1";
+            int res44 = summarize(arr44);
+            System.out.println("res is " + res44);
+
+            try {
+                int res54 = summarize(arr54);
+            } catch (MyArraySizeException myArraySizeException) {
+//                myArraySizeException.printStackTrace();
+
+                System.out.println("Let's fix the dimension and run again:");
+                arr54 = new String[][]{{"1", "2", "3", "4"},
+                                       {"1", "2", "3", "4"},
+                                       {"1", "2", "3", "4"},
+                                       {"1", "2", "3", "4"}};
+                int res54 = summarize(arr54);
+                System.out.println("res is " + res54);
+            }
+
+        }
+
+
     }
 
     private static void lesson8Hw() {
