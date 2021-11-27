@@ -13,6 +13,8 @@ import me.bkkn.lesson9.MyArraySizeException;
 import java.util.Arrays;
 import java.util.Random;
 
+import static me.bkkn.lesson10.Task.countWordFrequencies;
+import static me.bkkn.lesson10.Task.printOutUniqueWords;
 import static me.bkkn.lesson2.Task.checkBalance;
 import static me.bkkn.lesson2.Task.shift;
 import static me.bkkn.lesson3.Task.guessTheNumber;
@@ -31,7 +33,22 @@ public class Homework {
 //        lesson6Hw();
 //        lesson7Hw();
 //        lesson8Hw();
-        lesson9Hw();
+//        lesson9Hw();
+        lesson10Hw();
+    }
+
+    private static void lesson10Hw() {
+        String[] words = {
+                "Hello",
+                "Hell","LOL","YOU","Hell","LOL","YOU","Hell","LOL","YOU","Hell","LOL","YOU","Yuriy","Gagarin",
+                "LOL","YOU","Hell","LOL","YOU","Yuriy","Gagarin"
+        };
+
+        printOutUniqueWords(words);
+
+        countWordFrequencies(words);
+
+        me.bkkn.lesson10.Task.PhoneBook.test();
     }
 
     private static void lesson9Hw() {
