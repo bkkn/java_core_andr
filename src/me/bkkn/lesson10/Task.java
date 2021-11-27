@@ -33,25 +33,34 @@ public class Task {
     }
 
     public static class PhoneBook {
-        private Map<String, String> map = new HashMap<String, String>();
 
-        public PhoneBook() {
-            this.map.put("Ivan", "9031234569");
-            this.map.put("Ivan", "9011234569");
-            this.map.put("Ivan4", "9051234569");
-        }
+        private Map<String, Set<String>> map = new TreeMap<>();
 
         void add(String name, String number) {
-            map.put(name, number);
+            if (map.containsKey(name)) {
+                map.get(name).add(number);
+            } else {
+                map.put(name, new TreeSet<String>());
+                map.get(name).add(number);
+            }
         }
 
         void getNumber(String name) {
-            System.out.println(map.get(name));
+            System.out.println(name + " : " + map.get(name));
         }
 
         public static void test() {
             PhoneBook phoneBook = new PhoneBook();
+            phoneBook.add("Ivan", "9011234567");
+            phoneBook.add("Ivan", "9021234567");
+            phoneBook.add("Ivan", "9031234567");
+
+            phoneBook.add("Ivan2", "9011234567");
+            phoneBook.add("Ivan3", "9021234567");
+            phoneBook.add("Ivan4", "9031234567");
             phoneBook.getNumber("Ivan");
+            phoneBook.getNumber("Ivan1");
+            phoneBook.getNumber("Ivan2");
         }
     }
 }
