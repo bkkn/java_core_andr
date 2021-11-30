@@ -61,10 +61,9 @@ public class Homework {
         boolean cmp = Box.compare(appleBox,orangeBox);
         System.out.println("Result of compare is " + cmp);
 
-        for (int i = 0; i < 7; i++)
-            appleBox.pourIn(new Box<Apple>(new Apple()));
-        for (int i = 0; i < 3; i++)
-            orangeBox.pourIn(new Box(new Orange()));
+        appleBox.pourIn(new Box<Apple>(Apple.class,7));
+
+        orangeBox.pourIn(new Box(new Orange[]{new Orange(),new Orange(), new Orange()}));
 
         boolean cmp2 = Box.compare(appleBox,orangeBox);
         System.out.println("Apple Box weights " + appleBox.getWeight());

@@ -2,6 +2,7 @@ package me.bkkn.lesson11;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Box<F extends Fruit> {
@@ -56,13 +57,14 @@ public class Box<F extends Fruit> {
 //        }
 //}
 
-//    public <FruitType extends Fruit> Box(FruitType fruit) {
-//        this.list.add(fruit);
-//        object = fruit;
-//    }
+    public Box(F[] fruits) {
+        this.type = (Class<F>) fruits[0].getClass();
+        this.list.addAll(List.of(fruits));
+    }
 
     public Box(Class<F> type, int count) {
         try {
+            this.type = type;
             for (int i = 0; i < count; i++)
                 list.add((type.getDeclaredConstructor().newInstance()));
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
