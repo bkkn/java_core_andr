@@ -1,6 +1,7 @@
 package me.bkkn;
 
 import me.bkkn.lesson1.Task;
+import me.bkkn.lesson11.*;
 import me.bkkn.lesson5.Worker;
 import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
@@ -10,6 +11,7 @@ import me.bkkn.lesson8.*;
 import me.bkkn.lesson9.MyArrayDataException;
 import me.bkkn.lesson9.MyArraySizeException;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -34,14 +36,47 @@ public class Homework {
 //        lesson7Hw();
 //        lesson8Hw();
 //        lesson9Hw();
-        lesson10Hw();
+//        lesson10Hw();
+        lesson11Hw();
+    }
+
+    private static void lesson11Hw() {
+        Fruit[] array = new Fruit[]{new Apple(), new Orange(), new Orange()};
+        System.out.println(Task11.convertToArrayList(array));
+        Task11.swap(array, 0, 2);
+        System.out.println(Task11.convertToArrayList(array));
+
+        Box<Apple> appleBox = Box.newAppleBox();
+        appleBox.add(new Apple());
+        appleBox.add(new Apple());
+//        appleBox.add(new Orange()); -> complile Time error
+        System.out.println("Apple Box weights " + appleBox.getWeight());
+        Box<Orange> orangeBox = Box.newOrangeBox();
+        orangeBox.add(new Orange());
+        orangeBox.add(new Orange());
+        orangeBox.add(new Orange());
+//        orangeBox.add(new Apple());  -> complile Time error
+        System.out.println("Orange Box weights " + orangeBox.getWeight());
+
+        boolean cmp = Box.compare(appleBox,orangeBox);
+        System.out.println("Result of compare is " + cmp);
+
+        for (int i = 0; i < 7; i++)
+            appleBox.pourIn(new Box<Apple>(new Apple()));
+        for (int i = 0; i < 3; i++)
+            orangeBox.pourIn(new Box(new Orange()));
+
+        boolean cmp2 = Box.compare(appleBox,orangeBox);
+        System.out.println("Apple Box weights " + appleBox.getWeight());
+        System.out.println("Orange Box weights " + orangeBox.getWeight());
+        System.out.println("Result of compare is " + cmp2);
     }
 
     private static void lesson10Hw() {
         String[] words = {
                 "Hello",
-                "Hell","LOL","YOU","Hell","LOL","YOU","Hell","LOL","YOU","Hell","LOL","YOU","Yuriy","Gagarin",
-                "LOL","YOU","Hell","LOL","YOU","Yuriy","Gagarin"
+                "Hell", "LOL", "YOU", "Hell", "LOL", "YOU", "Hell", "LOL", "YOU", "Hell", "LOL", "YOU", "Yuriy", "Gagarin",
+                "LOL", "YOU", "Hell", "LOL", "YOU", "Yuriy", "Gagarin"
         };
 
         printOutUniqueWords(words);
@@ -82,9 +117,9 @@ public class Homework {
 
                 System.out.println("Let's fix the dimension and run again:");
                 arr54 = new String[][]{{"1", "2", "3", "4"},
-                                       {"1", "2", "3", "4"},
-                                       {"1", "2", "3", "4"},
-                                       {"1", "2", "3", "4"}};
+                        {"1", "2", "3", "4"},
+                        {"1", "2", "3", "4"},
+                        {"1", "2", "3", "4"}};
                 int res54 = summarize(arr54);
                 System.out.println("res is " + res54);
             }
