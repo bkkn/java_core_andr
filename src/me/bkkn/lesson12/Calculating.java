@@ -19,8 +19,16 @@ public interface Calculating extends Dividing{
         long start = System.currentTimeMillis();
         final float[][] arrs = divide(arr);
         long divided = System.currentTimeMillis();
-        new Thread( () -> calc(arrs[0])).start();
-        new Thread( () -> calc(arrs[1])).start();
+        try {
+            Thread thread1 = new Thread( () -> calc(arrs[0]));
+            thread1.start();
+            Thread thread2 = new Thread( () -> calc(arrs[1]));
+            thread2.start();
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         long merged = System.currentTimeMillis();
         arr = merge(arrs[0], arrs[1]);
         long finish = System.currentTimeMillis();
@@ -29,6 +37,7 @@ public interface Calculating extends Dividing{
         System.out.println("(merged in " +(finish - merged) +" milliseconds)"  );
         System.out.println("(calc in " +((finish - start) - (finish - merged) - (divided - start) ) +" milliseconds)"  );
         System.out.println("too small calc time to be true)");
+
         return arr;
     }
 }
