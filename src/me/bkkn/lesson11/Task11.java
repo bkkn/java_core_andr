@@ -20,10 +20,20 @@ public class Task11 {
     }
 
     public static <T> ArrayList<T> asArrayList(T[] array) {
-        return (ArrayList<T>) Arrays.asList(array);
+        return asArrayList(array);
     }
 
     public static void main(String[] args) {
+        Box threeAppleBox = new Box(convertToArrayList(new Apple[]{new Apple(), new Apple(), new Apple()}));
+        Box threeOrangeBox = new Box(convertToArrayList(new Apple[]{new Apple(), new Apple(), new Apple()}));
+
+
+
+
+
+
+
+
         Apple apple = new Apple();
         Box<Apple> boxOfApples = new Box<Apple>(apple);
         boxOfApples.add(apple);

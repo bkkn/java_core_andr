@@ -16,7 +16,6 @@ public class Box<F extends Fruit> {
             this.list.add(fruit);
     }
 
-
     public Box(F fruit) {
         this.list.add(fruit);
     }
