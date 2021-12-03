@@ -1,6 +1,6 @@
 package me.bkkn.lesson12;
 
-public interface Dividing {
+public interface Dividing extends Merging{
     int SIZE = 10_000_000;
     int HALF = SIZE / 2;
 
