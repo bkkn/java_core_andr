@@ -2,6 +2,7 @@ package me.bkkn.lesson11;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Task11 {
     /*Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);*/
@@ -15,7 +16,7 @@ public class Task11 {
     public static <T> ArrayList<T> convertToArrayList(T[] array) {
         ArrayList<T> arrayList = new ArrayList<>(array.length);
         for (int i = 0; i < array.length; i++)
-            arrayList.set(i, array[i]);
+            arrayList.add(i, array[i]);
         return arrayList;
     }
 
@@ -24,34 +25,32 @@ public class Task11 {
     }
 
     public static void main(String[] args) {
-        Box threeAppleBox = new Box(convertToArrayList(new Apple[]{new Apple(), new Apple(), new Apple()}));
-        Box threeOrangeBox = new Box(convertToArrayList(new Apple[]{new Apple(), new Apple(), new Apple()}));
+        Box<Apple> ab = new Box<Apple>(new Apple());
+//        ab.pourIn(new Box<Apple>())
 
+        Box[] boxes = new Box[10];
+        for (int i = 1; i < 9; i = i+2) {
+            boxes[i] = new Box(Apple.class, 3*i);
+            boxes[i+1] = new Box(Orange.class, i+1);
+            System.out.format("box%d wieghts %f\n",i,boxes[i].getWeight());
+            System.out.format("box%d wieghts %f\n",i+1,boxes[i+1].getWeight());
+            System.out.println("result of compare: " + Box.compare(boxes[i],boxes[i+1]));
+        }
 
+        for (int i = 1; i < 9; i = i+2) {
+            boxes[i] = new Box(Orange.class, i).pourIn(new Box(new Apple())).pourIn(new Box(new Orange()));
+            boxes[i+1] = new Box(Apple.class, i+1).pourIn(new Box(new Apple()));
+            System.out.format("box%d wieghts %f\n",i,boxes[i].getWeight());
+            System.out.format("box%d wieghts %f\n",i+1,boxes[i+1].getWeight());
+            System.out.println("result of compare: " + Box.compare(boxes[i],boxes[i+1]));
+        }
 
+        List<Apple> appleBox =  BoxBuilder.getList(new Apple(), new Apple());
+//        Box<Apple> appleBox =  BoxBuilder.build(3);
+//        Box<Orange> orangeBox =  BoxBuilder.build(4);
 
-
-
-
-
-        Apple apple = new Apple();
-        Box<Apple> boxOfApples = new Box<Apple>(apple);
-        boxOfApples.add(apple);
-        Float weight1 = boxOfApples.getWeight();
-
-        Box<Apple> boxOfApples2 = new Box<Apple>( new Apple[]{apple,apple,apple} );
-        Float weight11 = boxOfApples.getWeight();
-        boxOfApples2.pourIn(boxOfApples);
-        boxOfApples2.pourOut(boxOfApples);
-        Float weight111 = boxOfApples.getWeight();
-        Float weight1111 = boxOfApples2.getWeight();
-
-        Orange orange = new Orange();
-        Box<Orange> boxOfOranges = new Box<Orange>(orange);
-        boxOfOranges.add(orange);
-        float weight2 = boxOfOranges.getWeight();
-
-        boolean isSameWeight = Box.compare(boxOfApples, boxOfOranges);
+//        Box<Apple> appleBox = new Box<Apple>(new Apple[]{new Apple(),new Apple(),new Apple()});
+//        Box<Orange> orangeBox = new Box<Orange>(new Orange[]{new Orange(),new Orange(),new Orange()});
     }
 /*
 
