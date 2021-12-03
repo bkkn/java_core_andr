@@ -1,7 +1,13 @@
 package me.bkkn;
 
 import me.bkkn.lesson1.Task;
+
+import me.bkkn.lesson12.MultiThreadTask;
+import me.bkkn.lesson12.SingleThreadTask;
+import me.bkkn.lesson12.Task12;
+
 import me.bkkn.lesson11.*;
+
 import me.bkkn.lesson5.Worker;
 import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
@@ -37,7 +43,13 @@ public class Homework {
 //        lesson8Hw();
 //        lesson9Hw();
 //        lesson10Hw();
-        lesson11Hw();
+//        lesson11Hw();
+        lesson12Hw();
+    }
+
+    private static void lesson12Hw() {
+        new SingleThreadTask().execute();
+        new MultiThreadTask().execute();
     }
 
     private static void lesson11Hw() {
@@ -125,8 +137,6 @@ public class Homework {
             }
 
         }
-
-
     }
 
     private static void lesson8Hw() {

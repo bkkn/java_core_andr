@@ -56,6 +56,7 @@ public class Box<F extends Fruit> {
 //        }
 //}
 
+
 //    public <FruitType extends Fruit> Box(FruitType fruit) {
 //        this.list.add(fruit);
 //        object = fruit;

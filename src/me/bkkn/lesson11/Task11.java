@@ -21,11 +21,10 @@ public class Task11 {
     }
 
     public static <T> ArrayList<T> asArrayList(T[] array) {
-        return (ArrayList<T>) Arrays.asList(array);
+        return asArrayList(array);
     }
 
     public static void main(String[] args) {
-
         Box<Apple> ab = new Box<Apple>(new Apple());
 //        ab.pourIn(new Box<Apple>())
 
