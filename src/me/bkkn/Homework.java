@@ -9,6 +9,7 @@ import me.bkkn.lesson12.Task12;
 import me.bkkn.lesson11.*;
 
 import me.bkkn.lesson13.Task13;
+import me.bkkn.lesson14.Task14ArrayClassTest;
 import me.bkkn.lesson5.Worker;
 import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
@@ -17,6 +18,8 @@ import me.bkkn.lesson7.Bowl;
 import me.bkkn.lesson8.*;
 import me.bkkn.lesson9.MyArrayDataException;
 import me.bkkn.lesson9.MyArraySizeException;
+import org.junit.internal.TextListener;
+import org.junit.runner.JUnitCore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +49,14 @@ public class Homework {
 //        lesson10Hw();
 //        lesson11Hw();
 //        lesson12Hw();
-        lesson13Hw();
+//        lesson13Hw();
+        lesson14Hw();
+    }
+
+    private static void lesson14Hw() {
+        JUnitCore junit = new JUnitCore();
+        junit.addListener(new TextListener(System.out));
+        junit.run(Task14ArrayClassTest.class);
     }
 
     private static void lesson13Hw() {
