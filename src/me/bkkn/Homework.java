@@ -8,6 +8,7 @@ import me.bkkn.lesson12.Task12;
 
 import me.bkkn.lesson11.*;
 
+import me.bkkn.lesson13.Task13;
 import me.bkkn.lesson5.Worker;
 import me.bkkn.lesson6.Animal;
 import me.bkkn.lesson6.Cat;
@@ -44,7 +45,12 @@ public class Homework {
 //        lesson9Hw();
 //        lesson10Hw();
 //        lesson11Hw();
-        lesson12Hw();
+//        lesson12Hw();
+        lesson13Hw();
+    }
+
+    private static void lesson13Hw() {
+        Task13.startRace();
     }
 
     private static void lesson12Hw() {
